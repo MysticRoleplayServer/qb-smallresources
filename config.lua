@@ -80,14 +80,14 @@ Config.Density = {
 }
 
 Config.Disable = {
-    hudComponents = { 1, 2, 3, 4, 7, 9, 13, 14, 19, 20, 21, 22 }, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
+    hudComponents = { 1, 2, 3, 4, 7, 9, 13, 19, 20, 21, 22 }, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
     controls = { 37 },                                            -- Controls: https://docs.fivem.net/docs/game-references/controls/
     displayAmmo = true,                                           -- false disables ammo display
-    ambience = false,                                             -- disables distance sirens, distance car alarms, flight music, etc
+    ambience = true,                                             -- disables distance sirens, distance car alarms, flight music, etc
     idleCamera = true,                                            -- disables the idle cinematic camera
-    vestDrawable = false,                                         -- disables the vest equipped when using heavy armor
+    vestDrawable = true,                                         -- disables the vest equipped when using heavy armor
     pistolWhipping = true,                                        -- disables pistol whipping
-    driveby = false,                                              -- disables driveby
+    driveby = true,                                              -- disables driveby
 }
 
 Config.RelieveWeedStress = math.random(15, 20) -- stress relief amount (100 max)
@@ -247,18 +247,18 @@ Config.Teleports = {
             label = false
         }
     },
-    [2] = { --Coke Processing Enter/Exit
-        [1] = {
-            poly = { coords = vector3(909.49, -1589.22, 30.51), heading = 92.24, length = 2, width = 2 },
-            allowVeh = false,
-            label = '[E] Enter Coke Processing'
-        },
-        [2] = {
-            poly = { coords = vector3(1088.81, -3187.57, -38.99), heading = 181.7, length = 2, width = 2 },
-            allowVeh = false,
-            label = '[E] Leave'
-        }
-    }
+    -- [2] = { --Coke Processing Enter/Exit
+    --     [1] = {
+    --         poly = { coords = vector3(909.49, -1589.22, 30.51), heading = 92.24, length = 2, width = 2 },
+    --         allowVeh = false,
+    --         label = '[E] Enter Coke Processing'
+    --     },
+    --     [2] = {
+    --         poly = { coords = vector3(1088.81, -3187.57, -38.99), heading = 181.7, length = 2, width = 2 },
+    --         allowVeh = false,
+    --         label = '[E] Leave'
+    --     }
+    -- }
 }
 
 Config.CarWash = {
