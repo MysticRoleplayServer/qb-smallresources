@@ -527,3 +527,40 @@ function AlcoholLoop()
         end)
     end
 end
+
+RegisterNetEvent('consumables:client:usepower', function() -- lbphone
+    if not exports["lb-phone"]:IsCharging() or exports["lb-phone"]:IsPhoneDead() then
+        exports["lb-phone"]:ToggleCharging(true)
+        CreateThread(function() BatteryLoop() end)
+        QBCore.Functions.Notify("Charging..", "success")
+    elseif exports["lb-phone"]:IsCharging() then
+         QBCore.Functions.Notify("The phone is already charging", "error")
+    elseif exports["lb-phone"]:GetBattery() >= 90 then
+        QBCore.Functions.Notify("Your battery is full", "success")
+    end
+end)
+
+function BatteryLoop() -- lbphone
+local battery = exports["lb-phone"]:GetBattery()
+    if not looped then
+        looped = true
+        CreateThread(function()
+            while true do
+                Wait(10)
+                if battery <= 99 then
+                Wait(1000 * 10)
+                -- print("charging..")
+                battery +=1
+                -- print(battery)
+                exports["lb-phone"]:SetBattery(battery)
+                elseif battery >= 99 then
+                    -- print("Your battery is full")
+                    exports["lb-phone"]:ToggleCharging(false)
+                    QBCore.Functions.Notify("Your battery is full", "error")
+                    looped = false
+                    break
+                end
+            end
+        end)
+    end
+end
