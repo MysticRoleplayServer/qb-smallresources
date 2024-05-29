@@ -297,3 +297,8 @@ local function addCustom(itemName, data)
 end
 
 exports('AddCustom', addCustom)
+
+QBCore.Functions.CreateUseableItem("powerbank", function(source) -- lbphone
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("consumables:client:usepower", source)
+end)
