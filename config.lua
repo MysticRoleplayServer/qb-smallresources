@@ -58,7 +58,7 @@ Config.Discord = {
     iconSmallHoverText = 'Let your adventure begin!', -- The hover text of the small icon
     updateRate = 60000,                                    -- How often the player count should be updated
     showPlayerCount = true,                                -- If set to true the player count will be displayed in the rich presence
-    maxPlayers = 8,                                       -- Maximum amount of players
+    maxPlayers = 64,                                       -- Maximum amount of players
     buttons = {
         {
             text = 'Join Mystic RP Discord',
